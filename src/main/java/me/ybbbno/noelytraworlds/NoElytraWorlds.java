@@ -1,17 +1,22 @@
 package me.ybbbno.noelytraworlds;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import me.deadybbb.ybmj.PluginProvider;
+import me.ybbbno.noelytraworlds.commands.WorldsCommand;
 
-public final class NoElytraWorlds extends JavaPlugin {
+public final class NoElytraWorlds extends PluginProvider {
+    public WorldsHandler handler;
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        handler = new WorldsHandler(this);
+        getServer().getPluginManager().registerEvents(handler, this);
+        handler.init();
 
+        registerCommand("noelytraworld", new WorldsCommand(this));
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        handler.deinit();
     }
 }

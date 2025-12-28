@@ -1,5 +1,10 @@
 name: NoElytraWorlds
-version: '0.1'
+version: '0.1.1'
 main: me.ybbbno.noelytraworlds.NoElytraWorlds
 api-version: '1.21'
 authors: [ Ybbb ]
+dependencies:
+  server:
+    YBMJ:
+      load: BEFORE
+      required: true

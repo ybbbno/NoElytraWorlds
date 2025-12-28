@@ -1,0 +1,4 @@
+permissions:
+  noelytraworlds.use:
+    description: Allows use of /noelytraworlds
+    default: op
