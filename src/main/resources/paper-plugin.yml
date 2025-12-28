@@ -1,0 +1,5 @@
+name: NoElytraWorlds
+version: '0.1'
+main: me.ybbbno.noelytraworlds.NoElytraWorlds
+api-version: '1.21'
+authors: [ Ybbb ]
