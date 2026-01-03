@@ -27,7 +27,6 @@ public class WorldsHandler extends BasicManagerHandler implements Listener {
     public WorldsHandler(PluginProvider plugin) {
         super(plugin);
         this.config = new WorldsConfigHandler(plugin);
-        is_init = false;
     }
 
     @Override
@@ -53,7 +52,10 @@ public class WorldsHandler extends BasicManagerHandler implements Listener {
     }
 
     public boolean removeWorld(String world) {
-        return worlds.remove(world);
+        if (Bukkit.getWorld(world) != null) {
+            return worlds.remove(world);
+        }
+        return false;
     }
 
     @EventHandler
